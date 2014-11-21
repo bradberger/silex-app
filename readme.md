@@ -1,6 +1,6 @@
 This package provides a quick way to a Silex app and
 various service providers via a single yaml configuration
-file.
+file, and set up different configurations based on environments.
 
 Documentation forthcoming!
 
