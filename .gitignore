@@ -1,0 +1,7 @@
+composer.lock
+vendor/
+.project
+.settings/
+*.log
+config.yml
+index.php
