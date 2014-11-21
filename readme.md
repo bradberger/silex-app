@@ -2,6 +2,9 @@ This package provides a quick way to a Silex app and
 various service providers via a single yaml configuration
 file, and set up different configurations based on environments.
 
+It uses Eloquent by default instead of Doctrine, because adding an ORM
+is an upgrade in our opinion!
+
 Documentation forthcoming!
 
 ## Usage
@@ -70,7 +73,7 @@ The following service providers are currently supported, with more on the way.
 - Monolog
 - Swiftmailer
 - Translator
-- Session
+- Sessiongit remote add origin git@github.com:BitolaCo/silex-app.git
 - Twig
 - Cache
 
