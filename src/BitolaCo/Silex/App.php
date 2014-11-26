@@ -19,16 +19,25 @@ class App
 		}
 		return $config;
 	}
+    
+    private static function _joinPath($dir, $file)
+    {
+        $join = (substr($dir, -1) === "/" || substr($file, 0, 1) === "/") ? "" : "/";
+        return $dir.$join.$file;
+    }
 	
-    static public function setup($file)
+    static public function setup($base, $file)
     {
 
         $app = new \Silex\Application();
         $app->register(
-            new \DerAlex\Silex\YamlConfigServiceProvider($file)
+            new \DerAlex\Silex\YamlConfigServiceProvider(
+                self::_joinPath($base, $file)
+            )
         );
-		
+
 		$app['settings'] = self::_mergeEnvironments($app['config']);
+
 		
 		$app['debug'] = $app['settings']['debug'] ? : false;
         if (! empty($app['settings']['session'])) {
@@ -38,7 +47,8 @@ class App
         if (! empty($app['settings']['monolog'])) {
             $app->register(
                 new \Silex\Provider\MonologServiceProvider(),
-                array('monolog.logfile' => $app['settings']['monolog']
+                array(
+                    'monolog.logfile' => self::_joinPath($base, $app['settings']['monolog'])
                 )
             );
         }
@@ -65,7 +75,9 @@ class App
         if (! empty($app['settings']['twig'])) {
             $app->register(
                 new \Silex\Provider\TwigServiceProvider(),
-                array('twig.path' => $app['settings']['twig'])
+                array(
+                    'twig.path' => self::_joinPath($base, $app['settings']['twig'])
+                )
             );
         }
 
