@@ -17,7 +17,8 @@
         "silex/silex": "~1.2",
         "swiftmailer/swiftmailer": ">=4.1.2,<4.2-dev",
         "symfony/config": "~2.4",
-        "symfony/validator": "~2.4"
+        "symfony/validator": "~2.4",
+        "twig/twig": ">=1.8,<2.0-dev"
     },
     "autoload": {
         "psr-0": {
