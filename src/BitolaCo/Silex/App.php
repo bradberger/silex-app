@@ -52,6 +52,8 @@ class App
                 )
             );
         }
+        
+        $app->register(new \Silex\Provider\ValidatorServiceProvider());
 
         if (! empty($app['settings']['eloquent'])) {
             $app->register(
