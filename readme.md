@@ -78,7 +78,7 @@ The following service providers are currently supported, with more on the way.
 - Monolog
 - Swiftmailer
 - Translator
-- Sessiongit remote add origin git@github.com:BitolaCo/silex-app.git
+- Session
 - Twig
 - Cache
 
