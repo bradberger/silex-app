@@ -32,7 +32,12 @@ eloquent:
             collation: utf8_unicode_ci
             logging:
     cache:
-monolog: production.log
+monolog:
+    logfile: application.log
+    bubble: true
+    permission: null
+    level: DEBUG|INFO|WARNING|ERROR
+    name: MySilexApp
 swiftmailer:
     options:
         host: localhost
@@ -76,6 +81,15 @@ The following service providers are currently supported, with more on the way.
 - Sessiongit remote add origin git@github.com:BitolaCo/silex-app.git
 - Twig
 - Cache
+
+#### Monolog
+
+The [monolog parameters](http://silex.sensiolabs.org/doc/providers/monolog.html) and what they 
+mean [can be found here](http://silex.sensiolabs.org/doc/providers/monolog.html). It's a one-to-one
+direct compilation of the parameters there. 
+
+If you're setting the `level` parameter, be sure you're using a string (like "INFO") instead
+of the PHP constant like `Logger::INFO`, since the constant won't work. 
 
 ### Environments
 

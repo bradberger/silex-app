@@ -5,3 +5,4 @@ vendor/
 *.log
 config.yml
 index.php
+*~
