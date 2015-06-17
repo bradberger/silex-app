@@ -13,32 +13,30 @@ class RouteLoader implements LoaderInterface
 
     public function load($resource, $type = null)
     {
-    	
         if (true === $this->loaded) {
             throw new \RuntimeException('Do not add the "extra" loader twice');
         }
 
         $routes = new RouteCollection();
-		$defaultRoute = array(
-			'resource' => null,
-			'type' => null,
-			'path' => null,
-			'defaults' => array(),
-			'requirements' => array(),
-			'prefix' => null
-		);
-				
-		foreach($resource as $routeName => $route) {
-			$params = array_merge($defaultRoute, $route);
-			$routes->add(
-				$routeName, 
-				new Route($params['path'], $params['defaults'], $params['requirements'])
-			);
-		}
+        $defaultRoute = [
+            'resource' => null,
+            'type' => null,
+            'path' => null,
+            'defaults' => [],
+            'requirements' => [],
+            'prefix' => null
+        ];
+                
+        foreach ($resource as $routeName => $route) {
+            $params = array_merge($defaultRoute, $route);
+            $routes->add(
+                $routeName,
+                new Route($params['path'], $params['defaults'], $params['requirements'])
+            );
+        }
 
         $this->loaded = true;
         return $routes;
-
     }
 
     public function supports($resource, $type = null)

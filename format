@@ -1,0 +1,3 @@
+#!/bin/bash
+
+php-cs-fixer fix src/BitolaCo/Silex --level=psr2 --fixers=ordereduse,short_array_syntax,unused_use
