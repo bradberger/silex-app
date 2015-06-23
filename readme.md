@@ -1,3 +1,8 @@
+[![Latest Stable Version](https://poser.pugx.org/bitolaco/silex-app/v/stable)](https://packagist.org/packages/bitolaco/silex-app)
+[![Total Downloads](https://poser.pugx.org/bitolaco/silex-app/downloads)](https://packagist.org/packages/bitolaco/silex-app)
+[![Latest Unstable Version](https://poser.pugx.org/bitolaco/silex-app/v/unstable)](https://packagist.org/packages/bitolaco/silex-app)
+[![License](https://poser.pugx.org/bitolaco/silex-app/license)](https://packagist.org/packages/bitolaco/silex-app)
+
 This package provides a quick way to a Silex app and
 various service providers via a single yaml configuration
 file, and set up different configurations based on environments.
